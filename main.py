@@ -33,7 +33,6 @@ d1 = d.DiaryMoods(U1, [ex1, ex2], [a2, a3], 'Никогда не сдавайс�
 d2 = d.DiaryMoods(U2, [ex3], [a1], 'Не будь лапшой')
 
 print(d1.get_info())
-print()
 print(d2.get_info())
 
 

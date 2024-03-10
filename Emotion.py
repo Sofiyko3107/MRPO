@@ -1,3 +1,4 @@
+
 class Emotion:
     def __init__(self, emotionType, intensity):
         self.emotionType = emotionType

@@ -1,6 +1,3 @@
-import Event
-import Emotion
-
 
 class Exercise:
     def __init__(self, date, events, emotions):

@@ -1,3 +1,4 @@
+
 class DiaryMoods:
     def __init__(self, user, exercises, achievements, advices):
         self.user = user

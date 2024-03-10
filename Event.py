@@ -1,3 +1,4 @@
+
 class Event:
     def __init__(self, description, influence):
         self.description = description
