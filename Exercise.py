@@ -1,6 +1,7 @@
 
 class Exercise:
-    def __init__(self, date, events, emotions):
+    def __init__(self, id, date, events, emotions):
+        self.id = id
         self.date = date
         self.events = events
         self.emotions = emotions
@@ -18,4 +19,4 @@ class Exercise:
             for e in self.emotions:
                 emotions.append(e.get_info())
 
-        return [self.date, events, emotions]
+        return [self.id, self.date, events, emotions]

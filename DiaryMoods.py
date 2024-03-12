@@ -1,6 +1,7 @@
 
 class DiaryMoods:
-    def __init__(self, user, exercises, achievements, advices):
+    def __init__(self, id, user, exercises, achievements, advices):
+        self.id = id
         self.user = user
         self.exercises = exercises
         self.achievements = achievements
@@ -19,6 +20,6 @@ class DiaryMoods:
             for a in self.achievements:
                 achievements.append(a.get_info())
 
-        data = {'user': user, 'exercises': exercises, 'achievements': achievements, 'advices': self.advices}
+        data = {'id' : id, 'user': user, 'exercises': exercises, 'achievements': achievements, 'advices': self.advices}
 
         return data

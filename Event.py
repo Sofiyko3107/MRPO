@@ -1,8 +1,9 @@
 
 class Event:
-    def __init__(self, description, influence):
+    def __init__(self, id, description, influence):
+        self.id = id
         self.description = description
         self.influence = influence
 
     def get_info(self):
-        return [self.description, self.influence]
+        return [self.id, self.description, self.influence]
