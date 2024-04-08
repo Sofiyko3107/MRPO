@@ -23,4 +23,4 @@ class UserRepository(FakeRepository.FakeRepository):
             for u in self.users:
                 if u.id == id:
                     return u
-        return "Пользователь по данному id не найден"
+        return False

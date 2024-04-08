@@ -1,7 +1,7 @@
 from Repository import FakeRepository
 
 
-class ExercisesRepository(FakeRepository.FakeRepository):
+class ExerciseRepository(FakeRepository.FakeRepository):
 
     def __init__(self):
         self.exercises = []
