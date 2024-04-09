@@ -77,7 +77,7 @@ def auth(user_id):
 
 
 def register(user: User):
-    if len(user.password) >= 8:
+    if len(user.password) >= 8 and auth(user.id):
         user_repository.add(user)
         return True
     else:
