@@ -7,12 +7,17 @@ from Model.DiaryMoods import DiaryMoods
 from Model.Event import Event
 from Model.User import User
 from Model.Exercise import Exercise
+from PR2.Repository.SQLAlchemyRepository import SqlAlchemyRepository
 from Repository.UserRepository import UserRepository
 from Repository.AchievementRepository import AchievementRepository
 from Repository.DiaryMoodRepository import DiaryMoodRepository
 from Repository.EmotionRepository import EmotionRepository
 from Repository.EventRepository import EventRepository
 from Repository.ExerciseRepository import ExerciseRepository
+from DBModel import User as user
+from DBModel import DiaryMoods as diary_mood
+from DBModel import Exercise as exercise
+from DBModel import session
 
 # 1)Только зарегистрированный пользователь может вести дневник
 # 2)Задание должно содержать хотябы одну эмоцию и одно событие
@@ -113,3 +118,23 @@ make_exercise(ex5)
 make_diary(d1)
 make_diary(d2)
 make_diary(d3)
+
+db_url = 'sqlite:///emotionDiary.db'  # Используйте ваш URL подключения к базе данных
+repo = SqlAlchemyRepository(session)
+
+# Добавление нового пользователя
+new_user = user(login='test', gender='male', password='password')
+new_exercise = exercise(date=datetime.datetime.now() + datetime.timedelta(days=1))
+new_diary = diary_mood()
+new_diary.user = new_user
+
+# repo.add(new_diary)
+
+
+
+# Получение всех пользователей
+users = repo.get_all(diary_mood)
+for user in users:
+    print(user.user_id)
+
+
