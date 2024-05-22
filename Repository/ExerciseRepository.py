@@ -1,4 +1,4 @@
-from PR2.Repository.AbstractRepository import AbstractRepository
+from MRPO.Repository.AbstractRepository import AbstractRepository
 
 class ExerciseRepository(AbstractRepository):
 

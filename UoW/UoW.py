@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from AbstractUoW import AbstractUoW
-from ..Repository.SQLAlchemyRepository import SqlAlchemyRepository
+from MRPO.UoW.AbstractUoW import AbstractUoW
+from MRPO.Repository.SQLAlchemyRepository import SqlAlchemyRepository
 
 DEFAULT_SESSION_FACTORY = sessionmaker(
     bind=create_engine("sqlite:///emotionDiary.db")
@@ -15,10 +15,9 @@ class SqlAlchemyUnitOfWork(AbstractUoW):
     def __enter__(self):
         self.session = self.session_factory()
         self.repository = SqlAlchemyRepository(self.session)
-        return super().__enter__()
 
-    def __exit__(self, args):
-        super().__exit__(args)
+    def __exit__(self, *args):
+        super().__exit__(*args)
         self.session.close()
 
     def commit(self):
