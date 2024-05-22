@@ -1,7 +1,6 @@
-from Repository import FakeRepository
+from PR2.Repository.AbstractRepository import AbstractRepository
 
-
-class EmotionRepository(FakeRepository.FakeRepository):
+class EmotionRepository(AbstractRepository):
 
     def __init__(self):
         self.emotions = []
