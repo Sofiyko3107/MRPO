@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class FakeRepository(ABC):
+class AbstractRepository(ABC):
 
     def __init__(self):
         pass
