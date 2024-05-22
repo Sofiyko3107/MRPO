@@ -4,9 +4,11 @@ from Model.Exercise import Exercise
 from Model.Achievement import Achievement
 
 
+@dataclass
 class DiaryMoods:
 
-    def __init__(self, id: int, user: User, exercises: list[Exercise], achievements: list[Achievement], advices: list['']):
+    def __init__(self, id: int, user: User, exercises: list[Exercise], achievements: list[Achievement],
+                 advices: list['']):
         self.id = id
         self.user = user
         self.exercises = exercises

@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
 
+@dataclass
 class User:
 
     def __init__(self, id: int, login: str, gender: str, password: str):
