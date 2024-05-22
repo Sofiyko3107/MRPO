@@ -1,7 +1,7 @@
-from Repository import FakeRepository
+from PR2.Repository.AbstractRepository import AbstractRepository
 
 
-class EventRepository(FakeRepository.FakeRepository):
+class EventRepository(AbstractRepository):
 
     def __init__(self):
         self.events = []

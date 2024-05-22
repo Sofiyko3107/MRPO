@@ -1,7 +1,7 @@
-from Repository import FakeRepository
+from PR2.Repository.AbstractRepository import AbstractRepository
 
 
-class AchievementRepository(FakeRepository.FakeRepository):
+class AchievementRepository(AbstractRepository):
 
     def __init__(self):
         self.achievements = []

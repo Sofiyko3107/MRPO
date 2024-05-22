@@ -1,7 +1,6 @@
-from Repository import FakeRepository
+from PR2.Repository.AbstractRepository import AbstractRepository
 
-
-class ExerciseRepository(FakeRepository.FakeRepository):
+class ExerciseRepository(AbstractRepository):
 
     def __init__(self):
         self.exercises = []
