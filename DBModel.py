@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, create_engine
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy_serializer import SerializerMixin
 
 Base = declarative_base()
 
@@ -11,6 +12,15 @@ class User(Base):
     login = Column(String)
     gender = Column(String)
     password = Column(String)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'login': self.login,
+            'gender': self.gender,
+            'password': self.password  # Обратите внимание, что хранение паролей в открытом виде не рекомендуется!
+        }
+
 
 class Exercise(Base):
     __tablename__ = 'exercises'

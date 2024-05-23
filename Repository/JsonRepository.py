@@ -27,6 +27,8 @@ class JsonRepository(AbstractRepository):
         obj_id = str(obj.id)
         obj_data = obj.__dict__
 
+
+
         if class_name not in data:
             data[class_name] = {}
 
