@@ -3,7 +3,7 @@ from Model.User import User
 from Model.Exercise import Exercise
 from Model.Achievement import Achievement
 
-
+@dataclass
 @dataclass
 class DiaryMoods:
 

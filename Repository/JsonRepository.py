@@ -21,7 +21,7 @@ class JsonRepository(AbstractRepository):
     def add(self, obj):
         data = self.deserialize()
         if data is None:
-            data = []
+            data = {}
 
         class_name = obj.__class__.__name__
         obj_id = str(obj.id)
@@ -60,34 +60,12 @@ class JsonRepository(AbstractRepository):
         del data[class_name][obj_id]
 
         self.serialize(data)
-        # data = self.deserialize()
-        # print(data)
-        # if data is not None:
-        #     for item in data:
-        #         d =
-        #         if item == obj.__class__.__name__:
-        #             for id in data[item]:
-        #                 if id == str(obj.id):
-        #                     data[item] = {}
-        # print(data)
-        # #     data = [item for item in data]
-        # #     print(data)
-        #     # self.serialize(data)
 
     def get_all(self):
         data = self.deserialize()
-        if data is None:
-            print("No data found.")
-            return []
 
-        # Преобразование словаря в список объектов
-        all_objects = []
-        for class_name, objects in data.items():
-            for obj_id, obj_data in objects.items():
-                obj = self._create_object_from_dict(class_name, obj_id, obj_data)
-                all_objects.append(obj)
 
-        return all_objects
+        return data
 
     def get_by_id(self, name):
         pass

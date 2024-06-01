@@ -36,18 +36,17 @@ from Repository.JsonRepository import JsonRepository
 # new_diary = diary_mood()
 # new_diary.user = new_user
 
-uow = SqlAlchemyUnitOfWork()
-
-with uow:
-    new_user = user(login='test', gender='male', password='password')
-    new_diary = diary_mood(user=new_user)
-    uow.repository.add(new_diary)
-    uow.rollback()
-    # Получение всех пользователей
-    users = uow.repository.get_by_id(diary_mood, 1)
-    print(users)
-    # for user in users:
-    #     print(user.user_id)
+# uow = SqlAlchemyUnitOfWork()
+#
+# with uow:
+#     new_user = user(login='test', gender='male', password='password')
+#     new_diary = diary_mood(user=new_user)
+#     uow.repository.add(new_diary)
+#     uow.rollback()
+#     # Получение всех пользователей
+#     users = uow.repository.get_all(diary_mood)
+#     for user in users:
+#         print(user.user_id)
 
 
 # def auth(user_id):
@@ -159,4 +158,4 @@ achievement_repository.add(a3)
 
 repository = JsonRepository('data.json')
 
-# repository.get_all()
+print(repository.get_all())
